@@ -38,6 +38,18 @@
   "scopes": [
     "vso.code"
   ],
+  "links": {
+    "repository": {
+      "uri": "https://github.com/Maetis/ado-git-repositories-overview"
+    },
+    "issues": {
+      "uri": "https://github.com/Maetis/ado-git-repositories-overview/issues"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/Maetis/ado-git-repositories-overview"
+  },
   "contributions": [
     {
       "id": "git-repos-overview-hub",
