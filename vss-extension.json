@@ -1,0 +1,57 @@
+{
+  "manifestVersion": 1,
+  "version": "0.0.42",
+  "id": "git-repos-overview",
+  "name": "Git Repositories Overview",
+  "description": "All your project's Git repositories in a single view.",
+  "publisher": "KevinLecouvey",
+  "demands": ["api-version/5.0"],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "categories": ["Azure Repos"],
+  "content": {
+    "details": {
+      "path": "marketplace/overview.md"
+    }
+  },
+  "icons": {
+    "default": "marketplace/logo-128.png",
+    "large": "marketplace/logo-512.png"
+  },
+  "files": [
+    {
+      "path": "dist",
+      "addressable": true
+    },
+    {
+      "path": "img",
+      "addressable": true
+    },
+    {
+      "path": "marketplace",
+      "addressable": true
+    }
+  ],
+  "scopes": [
+    "vso.code"
+  ],
+  "contributions": [
+    {
+      "id": "git-repos-overview-hub",
+      "type": "ms.vss-web.hub",
+      "description": "Git repositories overview",
+      "targets": ["ms.vss-web.home-hub-group"],
+      "properties": {
+        "name": "Git Repositories",
+        "icon": {
+          "dark": "img/Git-Icon-White.png",
+          "light": "img/Git-Icon-Black.png"
+        },
+        "uri": "dist/hub/hub.html"
+      }
+    }
+  ]
+}
