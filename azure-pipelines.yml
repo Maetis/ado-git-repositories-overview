@@ -3,6 +3,8 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
+name: 0.1.$(Rev:r)
+
 trigger:
 - master
 
@@ -25,3 +27,10 @@ steps:
   inputs:
     command: 'custom'
     customCommand: 'run compile:dev'
+
+- task: PackageAzureDevOpsExtension@3
+  inputs:
+    rootFolder: 
+    publisherId: '$(PublisherId)'
+    extensionVersion: '$(buildNumber.buildNumber)'
+    updateTasksVersion: false
