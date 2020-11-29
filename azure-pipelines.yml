@@ -60,6 +60,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'pub/*.vsix'
+    PathtoPublish: 'pub'
     ArtifactName: 'drop'
     publishLocation: 'Container'
