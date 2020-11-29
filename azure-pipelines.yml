@@ -36,5 +36,5 @@ steps:
   inputs:
     rootFolder: 
     publisherId: '$(PublisherId)'
-    extensionVersion: '$(buildNumber.buildNumber)'
+    extensionVersion: '$(Build.BuildNumber)'
     updateTasksVersion: false
