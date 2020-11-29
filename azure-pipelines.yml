@@ -17,6 +17,10 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+- task: TfxInstaller@3
+  inputs:
+    version: 'v0.8.x'
+
 - script: |
     npm install -g webpack webpack-cli --save-dev
     npm install
