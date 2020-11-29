@@ -28,13 +28,38 @@ steps:
   displayName: 'npm install, run webpack'
 
 - task: Npm@1
+  displayName: 'Build development version'
   inputs:
     command: 'custom'
     customCommand: 'run compile:dev'
 
 - task: PackageAzureDevOpsExtension@3
+  displayName: 'Package development version'
   inputs:
     rootFolder: 
     publisherId: '$(PublisherId)'
     extensionVersion: '$(Build.BuildNumber)'
+    extensionTag: 'dev'
+    outputPath: 'pub'
     updateTasksVersion: false
+
+- task: Npm@1
+  displayName: 'Build production version'
+  inputs:
+    command: 'custom'
+    customCommand: 'run compile'
+
+- task: PackageAzureDevOpsExtension@3
+  displayName: 'Package production version'
+  inputs:
+    rootFolder: 
+    publisherId: '$(PublisherId)'
+    extensionVersion: '$(Build.BuildNumber)'
+    outputPath: 'pub'
+    updateTasksVersion: false
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'pub/*.vsix'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
