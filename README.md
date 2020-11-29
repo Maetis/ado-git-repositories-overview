@@ -2,6 +2,8 @@
 
 none
 
+[![Build Status](https://maetis.visualstudio.com/Parts%20Unlimited/_apis/build/status/Maetis.ado-git-repositories-overview?branchName=main)](https://maetis.visualstudio.com/Parts%20Unlimited/_build/latest?definitionId=22&branchName=main)
+
 ## Running this project
 
 Follow these steps to run a dev version of this project that supports hot reload and is debuggable through VS Code. You will need to install [Firefox](https://www.mozilla.org/firefox/) if you don't have it already because the VS Code Debugger for Chrome extension [doesn't support iframes](https://github.com/microsoft/vscode-chrome-debug/issues/786) yet.
