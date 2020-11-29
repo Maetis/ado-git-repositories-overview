@@ -37,9 +37,9 @@ steps:
   displayName: 'Package development version'
   inputs:
     rootFolder: 
+    extensionId: 'git-repos-overview-dev'
     publisherId: '$(PublisherId)'
     extensionVersion: '$(Build.BuildNumber)'
-    extensionTag: 'dev'
     outputPath: 'pub'
     updateTasksVersion: false
 
