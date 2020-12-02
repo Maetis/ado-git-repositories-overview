@@ -9,20 +9,16 @@ resources:
   - pipeline: BuildPipeline
     source: Maetis.ado-git-repositories-overview
 
-trigger:
-- main
-
-pool:
-  vmImage: 'ubuntu-latest'
-
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
-
-- script: |
-    npm install -g webpack webpack-cli --save-dev
-    npm install
-    npx webpack --config webpack.config.js
-  displayName: 'npm install, run webpack'
+stages:
+  - stage: PublishDev
+    jobs:
+      - job: PublishDev
+        pool: 
+          vmImage: 'ubuntu-latest'
+        steps:
+          - task: PublishAzureDevOpsExtension@3
+            inputs:
+              connectTo: 'VsTeam'
+              connectedServiceName: 'MarketPlace'
+              fileType: 'vsix'
+              vsixFile: '*-dev.vsix'
