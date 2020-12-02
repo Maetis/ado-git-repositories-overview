@@ -35,4 +35,4 @@ stages:
               connectTo: 'VsTeam'
               connectedServiceName: 'MarketPlace'
               fileType: 'vsix'
-              vsixFile: '$(System.ArtifactsDirectory)/*-dev.vsix'
+              vsixFile: '$(System.ArtifactsDirectory)/drop/*-dev-*.vsix'
