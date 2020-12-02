@@ -9,6 +9,8 @@ resources:
   - pipeline: BuildPipeline
     source: Maetis.ado-git-repositories-overview
 
+trigger: none
+
 stages:
   - stage: PublishDev
     jobs:
