@@ -24,8 +24,8 @@ stages:
           - task: DownloadBuildArtifacts@0
             inputs:
               buildType: 'specific'
-              project: '108190d0-bc81-465e-be7e-0a32f0bccf98'
-              pipeline: '22'
+              project: $(ProjectId)
+              pipeline: $(PipelineId)
               specificBuildWithTriggering: true
               buildVersionToDownload: 'latest'
               downloadType: 'specific'
