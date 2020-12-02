@@ -16,9 +16,21 @@ stages:
         pool: 
           vmImage: 'ubuntu-latest'
         steps:
+          - task: TfxInstaller@3
+            inputs:
+              version: 'v0.8.x'
+          - task: DownloadBuildArtifacts@0
+            inputs:
+              buildType: 'specific'
+              project: '108190d0-bc81-465e-be7e-0a32f0bccf98'
+              pipeline: '22'
+              specificBuildWithTriggering: true
+              buildVersionToDownload: 'latest'
+              downloadType: 'specific'
+              downloadPath: '$(System.ArtifactsDirectory)'
           - task: PublishAzureDevOpsExtension@3
             inputs:
               connectTo: 'VsTeam'
               connectedServiceName: 'MarketPlace'
               fileType: 'vsix'
-              vsixFile: '*-dev.vsix'
+              vsixFile: '$(System.ArtifactsDirectory)/*-dev.vsix'
