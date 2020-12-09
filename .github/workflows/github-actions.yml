@@ -1,0 +1,12 @@
+name: build-and-release
+on: [push]
+jobs:
+  build:
+    run-ons: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install -g webpack webpack-cli --save-dev
+      - run: npm install
+      - run: npx webpack --config webpack.config.js
+      - run: npm run compile:dev
