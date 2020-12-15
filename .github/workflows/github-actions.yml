@@ -6,6 +6,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+      - uses: Maetis/github-action-tfxinstaller@v1.0.0-pre
+        with:
+          version: '0.8.3'
       - run: npm install -g webpack webpack-cli --save-dev
       - run: npm install
       - run: npx webpack --config webpack.config.js
